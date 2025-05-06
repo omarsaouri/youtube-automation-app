@@ -1,0 +1,24 @@
+{
+  "name": "youtube-automation-app",
+  "version": "1.0.0",
+  "description": "Automated YouTube video creation and upload system",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-polly": "^3.0.0",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "googleapis": "^120.0.0",
+    "openai": "^4.96.2",
+    "sharp": "^0.32.0",
+    "stability-client": "^1.8.0",
+    "https-proxy-agent": "^3.0.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.43.0",
+    "readline": "^1.3.0"
+  },
+  "type": "module"
+}
