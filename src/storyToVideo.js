@@ -2,6 +2,7 @@ import { generateStory } from './storyGenerator.js';
 import { createVideo } from './videoCreator.js';
 import { generateThumbnail } from './thumbnailGenerator.js';
 import { convertToSpeech } from './speechGenerator.js';
+import { generateSubtitles } from './subtitleGenerator.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';   
@@ -10,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_DIR = path.join(__dirname, '../output');
 
 // Ensure output directories exist
-['stories', 'audio', 'video', 'thumbnails'].forEach(dir => {
+['stories', 'audio', 'video', 'thumbnails', 'subtitles'].forEach(dir => {
     const dirPath = path.join(OUTPUT_DIR, dir);
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -47,21 +48,27 @@ export async function createStoryVideo() {
         console.log('Creating thumbnail...');
         const thumbnailPath = await generateThumbnail(title);
         
-        // Step 4: Create video
-        console.log('Creating video...');
-        const videoPath = await createVideo(audioPath);
+        // Step 4: Generate subtitles
+        console.log('Generating subtitles...');
+        const subtitlePath = await generateSubtitles(storyPath, 420); // 7 minutes duration
+        
+        // Step 5: Create video with subtitles
+        console.log('Creating video with subtitles...');
+        const videoPath = await createVideo(audioPath, subtitlePath);
         
         console.log('Process completed successfully!');
         console.log('Output files:');
         console.log(`- Story: ${storyPath}`);
         console.log(`- Audio: ${audioPath}`);
         console.log(`- Thumbnail: ${thumbnailPath}`);
+        console.log(`- Subtitles: ${subtitlePath}`);
         console.log(`- Video: ${videoPath}`);
         
         return {
             storyPath,
             audioPath,
             thumbnailPath,
+            subtitlePath,
             videoPath,
             title,
             story

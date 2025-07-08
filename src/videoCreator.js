@@ -15,7 +15,7 @@ if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
-export async function createVideo(audioPath) {
+export async function createVideo(audioPath, subtitlePath = null) {
     return new Promise((resolve, reject) => {
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         const outputPath = path.join(OUTPUT_DIR, `video-${timestamp}.mp4`);
@@ -31,7 +31,15 @@ export async function createVideo(audioPath) {
             const targetDuration = 420; // 7 minutes in seconds
             const speedFactor = audioDuration / targetDuration;
 
-            ffmpeg()
+            // Build the filter complex string
+            let filterComplex = `[0:v]setpts=${speedFactor}*PTS[v];[v]scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2[vout]`;
+            
+            // Add subtitle overlay if subtitle path is provided
+            if (subtitlePath && fs.existsSync(subtitlePath)) {
+                filterComplex = `[0:v]setpts=${speedFactor}*PTS[v];[v]scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2[vout];[vout]subtitles=${subtitlePath}:force_style='FontName=Noto Sans Arabic,FontSize=24,PrimaryColour=&Hffffff,OutlineColour=&H000000,OutlineWidth=2,ShadowColour=&H000000,ShadowDepth=2,MarginV=50,Alignment=2'[final]`;
+            }
+
+            const command = ffmpeg()
                 .input(VIDEO_SNIPPET_PATH)
                 .inputOptions(['-stream_loop -1']) // Loop the video
                 .input(audioPath)
@@ -41,10 +49,17 @@ export async function createVideo(audioPath) {
                     '-b:a 192k',
                     '-pix_fmt yuv420p',
                     '-t', targetDuration.toString(), // Set exact duration to 7 minutes
-                    '-filter_complex', `[0:v]setpts=${speedFactor}*PTS[v];[v]scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2[vout]`,
-                    '-map', '[vout]',
-                    '-map', '1:a'
-                ])
+                    '-filter_complex', filterComplex
+                ]);
+
+            // Map the output streams
+            if (subtitlePath && fs.existsSync(subtitlePath)) {
+                command.outputOptions(['-map', '[final]', '-map', '1:a']);
+            } else {
+                command.outputOptions(['-map', '[vout]', '-map', '1:a']);
+            }
+
+            command
                 .output(outputPath)
                 .on('end', () => {
                     console.log('Video processing finished');

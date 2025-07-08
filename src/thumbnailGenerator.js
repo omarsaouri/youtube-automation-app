@@ -38,9 +38,17 @@ export async function generateThumbnail(title) {
         // Second composite: Add text
         const textSvg = `
             <svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blur">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+                    </filter>
+                </defs>
+                <rect x="0" y="500" width="1280" height="220" 
+                    fill="rgba(0, 0, 0, 0.2)" 
+                    filter="url(#blur)" />
                 <text x="640" y="620" 
                     font-family="Noto Sans Arabic" 
-                    font-size="180" 
+                    font-size="170" 
                     font-weight="900"
                     fill="#ffffff" 
                     stroke="#FFD707"

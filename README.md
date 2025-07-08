@@ -1,13 +1,14 @@
 # YouTube Automation App
 
-This Node.js application automates the process of creating and uploading YouTube videos with Moroccan Arabic (Darija) content. It generates stories, converts them to speech, creates thumbnails, and uploads the final video to YouTube.
+This Node.js application automates the process of creating and uploading YouTube videos with Moroccan Arabic (Darija) content. It generates stories, converts them to speech, creates thumbnails, generates subtitles, and uploads the final video to YouTube.
 
 ## Features
 
 - Story generation in Moroccan Arabic using OpenAI
-- Text-to-speech conversion using Amazon Polly
+- Text-to-speech conversion using Azure Speech Services
 - Thumbnail generation with text overlay
-- Video creation using ffmpeg
+- **Automatic subtitle generation in SRT format**
+- Video creation using ffmpeg with subtitle overlay
 - Automatic YouTube upload with metadata
 
 ## Prerequisites
@@ -16,7 +17,7 @@ This Node.js application automates the process of creating and uploading YouTube
 - FFmpeg installed on your system
 - API keys for:
   - OpenAI
-  - Amazon AWS (Polly)
+  - Azure Speech Services
   - YouTube API
 
 ## Installation
@@ -35,9 +36,8 @@ npm install
 3. Create a `.env` file in the root directory with the following variables:
 ```
 OPENAI_API_KEY=your_openai_api_key
-AWS_ACCESS_KEY_ID=your_aws_access_key
-AWS_SECRET_ACCESS_KEY=your_aws_secret_key
-AWS_REGION=us-east-1
+AZURE_SPEECH_KEY=your_azure_speech_key
+AZURE_SPEECH_REGION=your_azure_region
 YOUTUBE_CLIENT_ID=your_youtube_client_id
 YOUTUBE_CLIENT_SECRET=your_youtube_client_secret
 YOUTUBE_REFRESH_TOKEN=your_youtube_refresh_token
@@ -50,7 +50,8 @@ YOUTUBE_REFRESH_TOKEN=your_youtube_refresh_token
 
 ## Usage
 
-Run the application:
+### Complete Workflow
+Run the complete automation workflow:
 ```bash
 npm start
 ```
@@ -59,15 +60,59 @@ The application will:
 1. Generate a story in Moroccan Arabic
 2. Convert the story to speech
 3. Create a thumbnail
-4. Combine the thumbnail and audio into a video
-5. Upload the video to YouTube
+4. **Generate subtitles in SRT format**
+5. **Combine the thumbnail, audio, and subtitles into a video**
+6. Upload the video to YouTube
+
+### Individual Components
+
+#### Story to Video with Subtitles
+```bash
+node src/storyToVideo.js
+```
+
+#### Test Subtitle Generation
+```bash
+node src/testSubtitles.js
+```
+
+#### Test Complete Workflow
+```bash
+node src/testCompleteWorkflow.js
+```
+
+## Subtitle Feature
+
+The application now includes automatic subtitle generation with the following features:
+
+- **Automatic text segmentation**: Splits the story into appropriate subtitle chunks
+- **Proper timing**: Calculates timing based on audio duration
+- **Arabic text support**: Optimized for Arabic text display
+- **SRT format**: Standard subtitle format compatible with most video players
+- **FFmpeg integration**: Automatically overlays subtitles on the video
+
+### Subtitle Styling
+Subtitles are styled with:
+- Font: Noto Sans Arabic (optimized for Arabic text)
+- Font size: 24px
+- Color: White text with black outline
+- Position: Bottom center with margin
+- Shadow: Black shadow for better readability
+
+### Customization
+You can modify subtitle styling by editing the `force_style` parameter in `src/videoCreator.js`:
+
+```javascript
+force_style='FontName=Noto Sans Arabic,FontSize=24,PrimaryColour=&Hffffff,OutlineColour=&H000000,OutlineWidth=2,ShadowColour=&H000000,ShadowDepth=2,MarginV=50,Alignment=2'
+```
 
 ## Output
 
 The application creates the following output directories:
 - `output/audio`: Contains the generated MP3 files
 - `output/thumbnails`: Contains the generated thumbnail images
-- `output/video`: Contains the final MP4 videos
+- `output/subtitles`: Contains the generated SRT subtitle files
+- `output/video`: Contains the final MP4 videos with embedded subtitles
 
 ## License
 

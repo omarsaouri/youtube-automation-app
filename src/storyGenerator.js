@@ -43,7 +43,7 @@ function cleanTextForTTS(text) {
 export async function generateStory() {
     try {
         const response = await openai.chat.completions.create({
-            model: "gpt-4.1-nano",
+            model: "gpt-4o-mini",
             messages: [
                 {
                     role: "system",
@@ -51,19 +51,21 @@ export async function generateStory() {
                     تعليمات مهمة:
                     1. اكتب عنوان جذاب للقصة لا يتجاوز 3 كلمات.
                     2. اكتب قصة طويلة ومثيرة باللغة العربية الفصحى، يجب أن تكون القصة طويلة (7-8 دقائق عند قراءتها).
-                    3. استخدم علامات الترقيم بشكل صحيح:
+                    3. يجب أن تكون القصة طويلة بما يكفي لقراءة 7-8 دقائق (حوالي 2000-2500 كلمة).
+                    4. استخدم علامات الترقيم بشكل صحيح:
                         * استخدم النقطة (.) للأفكار الكاملة
                         * استخدم الفاصلة (،) للتوقفات الطبيعية
                         * استخدم علامة الاستفهام (؟) للأسئلة
                         * استخدم علامة التعجب (!) للتأكيد
                         * استخدم علامات الاقتباس ("") للحوار
-                    4. اجعل القصة:
+                    5. اجعل القصة:
                         * بسيطة وسهلة الفهم
                         * مثيرة وتشويقية
                         * تحتوي على عنصر مفاجأة
                         * تنتهي بعبرة أخلاقية قصيرة
-                    5. استخدم لغة بسيطة وواضحة مع الحفاظ على جمالية اللغة العربية.
-                    6. يمكنك استخدام حبكة أكثر تعقيداً مع تطور الشخصيات.
+                    6. استخدم لغة بسيطة وواضحة مع الحفاظ على جمالية اللغة العربية.
+                    7. يمكنك استخدام حبكة أكثر تعقيداً مع تطور الشخصيات.
+                    8. تأكد من أن القصة طويلة بما يكفي (7-8 دقائق قراءة) مع الحفاظ على جودة المحتوى.
                     
                     تنسيق الإجابة:
                     العنوان: [عنوان القصة (3 كلمات أو أقل)]
@@ -73,11 +75,11 @@ export async function generateStory() {
                 },
                 {
                     role: "user",
-                    content: "اكتب قصة طويلة ومثيرة باللغة العربية الفصحى، مع حبكة متطورة وعنصر مفاجأة في النهاية."
+                    content: "اكتب قصة طويلة ومثيرة باللغة العربية الفصحى، مع حبكة متطورة وعنصر مفاجأة في النهاية. يجب أن تكون القصة طويلة بما يكفي لقراءة 7-8 دقائق."
                 }
             ],
             temperature: 0.7,
-            max_tokens: 9000  // Increased for longer stories
+            max_tokens: 4000  // Increased for longer stories
         });
 
         const storyContent = response.choices[0].message.content;
@@ -86,18 +88,33 @@ export async function generateStory() {
         // Clean the story content
         const cleanedStory = cleanTextForTTS(storyContent);
         
+        // Extract title and story content
+        const titleMatch = cleanedStory.match(/العنوان:\s*["“”]?(.+?)["“" ]?\s*(?:\n|$)/);
+        const storyMatch = cleanedStory.match(/القصة:\s*([\s\S]+)/);
+        
+        if (!titleMatch || !storyMatch) {
+            throw new Error('Could not extract title or story content from the generated text');
+        }
+        
+        let title = titleMatch[1].trim();
+        title = title.replace(/القصة:.*/g, '').trim();
+        const story = storyMatch[1].trim();
+        
         // Save the story to a plain text file
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         const outputPath = path.join(OUTPUT_DIR, `story-${timestamp}.txt`);
         
         fs.writeFileSync(outputPath, cleanedStory, 'utf8');
         console.log('Story saved successfully:', {
+            title: title,
             contentLength: cleanedStory.length,
             path: outputPath
         });
 
         return {
-            content: cleanedStory
+            title: title,
+            content: cleanedStory,
+            story: story
         };
     } catch (error) {
         console.error('Error generating story:', error);
@@ -106,6 +123,15 @@ export async function generateStory() {
 }
 
 // For testing purposes
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-    generateStory().catch(console.error);
+if (import.meta.url === `file://${process.argv[1]}`) {
+    console.log('Starting story generation...');
+    generateStory()
+        .then(result => {
+            console.log('Story generated successfully!');
+            console.log('Content length:', result.content.length);
+        })
+        .catch(error => {
+            console.error('Failed to generate story:', error);
+            process.exit(1);
+        });
 }
