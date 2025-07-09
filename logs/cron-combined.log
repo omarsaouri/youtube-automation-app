@@ -1,0 +1,22 @@
+{"level":"info","message":"🎬 Running single automation job...","service":"cron-scheduler","timestamp":"2025-07-08T16:29:51.594Z"}
+{"level":"info","message":"🔄 Attempt 1/3 - Starting automation","service":"cron-scheduler","timestamp":"2025-07-08T16:29:51.596Z"}
+{"level":"error","message":"❌ Attempt 1/3 failed: The request metadata specifies an invalid or empty video title.","service":"cron-scheduler","stack":"Error: The request metadata specifies an invalid or empty video title.\n    at runAutomationWithRetry (file:///Users/omarsaouri/Coding/youtube-automation-app/src/cronScheduler.js:103:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (file:///Users/omarsaouri/Coding/youtube-automation-app/src/cronScheduler.js:257:32)","timestamp":"2025-07-08T16:32:45.952Z"}
+{"level":"info","message":"⏳ Waiting 1000ms before retry...","service":"cron-scheduler","timestamp":"2025-07-08T16:32:45.953Z"}
+{"level":"info","message":"🔄 Attempt 2/3 - Starting automation","service":"cron-scheduler","timestamp":"2025-07-08T16:32:46.954Z"}
+{"level":"info","message":"🎬 Running single automation job...","service":"cron-scheduler","timestamp":"2025-07-08T16:36:48.571Z"}
+{"level":"info","message":"🔄 Attempt 1/3 - Starting automation","service":"cron-scheduler","timestamp":"2025-07-08T16:36:48.573Z"}
+{"duration":175355,"level":"info","message":"✅ Automation completed successfully on attempt 1","service":"cron-scheduler","timestamp":"2025-07-08T16:39:43.931Z","title":"حلم التغييرالقصة: في قرية صغيرة تقع بين الجبال، كان هناك شاب يُدعى يوسف. كان يوسف معروفًا بذكائه ...","videoId":"LgaPKUlaHiQ"}
+{"0":"0 6 * * *","1":"0 10 * * *","2":"0 14 * * *","3":"0 18 * * *","4":"0 22 * * *","5":"0 2 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-08T16:53:29.891Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-08T16:53:29.921Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-08T16:53:29.921Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-08T16:53:29.922Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 18 * * *","service":"cron-scheduler","timestamp":"2025-07-08T16:53:29.923Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-08T16:53:29.923Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-08T16:53:29.923Z"}
+{"0":"0 6 * * *","1":"0 10 * * *","2":"0 14 * * *","3":"0 18 * * *","4":"0 22 * * *","5":"0 2 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-08T17:05:55.098Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-08T17:05:55.111Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-08T17:05:55.112Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-08T17:05:55.112Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 18 * * *","service":"cron-scheduler","timestamp":"2025-07-08T17:05:55.113Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-08T17:05:55.113Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-08T17:05:55.113Z"}

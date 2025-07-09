@@ -24,16 +24,32 @@ export async function createStoryVideo() {
         console.log('Generating story...');
         const { content: storyContent } = await generateStory();
         
-        // Extract title and story content
-        const titleMatch = storyContent.match(/العنوان:\s*([^\n]+)/);
+        // Extract title and story content with improved logic
+        const titleMatch = storyContent.match(/العنوان:\s*"([^"]+)"|العنوان:\s*([^\n]+)/);
         const storyMatch = storyContent.match(/القصة:\s*([\s\S]+)/);
         
-        if (!titleMatch || !storyMatch) {
-            throw new Error('Could not extract title or story content from the generated text');
+        if (!storyMatch) {
+            throw new Error('Could not extract story content from the generated text');
         }
         
-        const title = titleMatch[1].trim();
+        let title = 'قصة عربية جميلة - Story Time'; // Default title
+        if (titleMatch) {
+            // Try to get the title from quotes first, then from the general match
+            const extractedTitle = (titleMatch[1] || titleMatch[2] || '').trim();
+            if (extractedTitle && extractedTitle.length > 0 && extractedTitle.length < 100) {
+                title = extractedTitle;
+            }
+        }
+        
         const story = storyMatch[1].trim();
+        
+        // Validate story content
+        if (!story || story.length < 50) {
+            throw new Error('Generated story content is too short or empty');
+        }
+        
+        console.log(`📝 Extracted title: "${title}"`);
+        console.log(`📖 Story length: ${story.length} characters`);
         
         // Save the story
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -63,6 +79,7 @@ export async function createStoryVideo() {
         console.log(`- Thumbnail: ${thumbnailPath}`);
         console.log(`- Subtitles: ${subtitlePath}`);
         console.log(`- Video: ${videoPath}`);
+        console.log(`- Title: ${title}`);
         
         return {
             storyPath,

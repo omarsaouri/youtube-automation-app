@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: youtube-automation
+    env: node
+    buildCommand: npm install
+    startCommand: npm run cron start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TZ
+        value: UTC 
