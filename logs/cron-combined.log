@@ -241,3 +241,25 @@
 {"level":"info","message":"🔄 Attempt 1/3 - Starting automation","service":"cron-scheduler","timestamp":"2025-07-12T17:44:00.203Z"}
 {"duration":178359,"level":"info","message":"✅ Automation completed successfully on attempt 1","service":"cron-scheduler","timestamp":"2025-07-12T17:46:58.566Z","title":"سر الغابة المظلمة","videoId":"Yn6A5qoyqkM"}
 {"duration":178368,"jobName":"video-1","level":"info","message":"✅ Scheduled job video-1 completed successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:46:58.567Z","title":"سر الغابة المظلمة","videoId":"Yn6A5qoyqkM","youtubeUrl":"https://youtube.com/watch?v=Yn6A5qoyqkM"}
+{"level":"info","message":"🛑 Received SIGINT. Shutting down gracefully...","service":"cron-scheduler","timestamp":"2025-07-12T17:58:50.139Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.422Z","timezone":"Africa/Casablanca"}
+{"level":"info","message":"🚀 Starting YouTube automation cron scheduler...","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.423Z"}
+{"0":"44 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.431Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 44 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.433Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.433Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.434Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.434Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.434Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.435Z"}
+{"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.435Z"}
+{"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.435Z"}
+{"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T18:00:31.435Z"}
+{"level":"info","message":"🛑 Received SIGINT. Shutting down gracefully...","service":"cron-scheduler","timestamp":"2025-07-12T18:00:39.732Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.255Z","timezone":"Africa/Casablanca"}
+{"0":"44 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.259Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 44 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.260Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.261Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.261Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.261Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.261Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T18:00:49.262Z"}
