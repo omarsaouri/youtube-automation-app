@@ -156,3 +156,88 @@
 {"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:05:27.631Z"}
 {"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T17:05:27.631Z"}
 {"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T17:05:27.632Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.739Z","timezone":"UTC"}
+{"level":"info","message":"🚀 Starting YouTube automation cron scheduler...","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.740Z"}
+{"0":"0 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.758Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 0 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.760Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.760Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.761Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.761Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.761Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.762Z"}
+{"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.762Z"}
+{"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.762Z"}
+{"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T17:16:43.762Z"}
+{"level":"info","message":"🛑 Received SIGINT. Shutting down gracefully...","service":"cron-scheduler","timestamp":"2025-07-12T17:18:29.745Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.000Z","timezone":"UTC"}
+{"level":"info","message":"🚀 Starting YouTube automation cron scheduler...","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.002Z"}
+{"0":"20 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.020Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 20 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.022Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.023Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.023Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.023Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.023Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.024Z"}
+{"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.024Z"}
+{"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.024Z"}
+{"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T17:18:33.024Z"}
+{"level":"info","message":"🛑 Received SIGTERM. Shutting down gracefully...","service":"cron-scheduler","timestamp":"2025-07-12T17:26:39.628Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.312Z","timezone":"Africa/Casablanca"}
+{"level":"info","message":"🚀 Starting YouTube automation cron scheduler...","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.315Z"}
+{"0":"20 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.337Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 20 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.339Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.339Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.341Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.341Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.341Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.342Z"}
+{"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.342Z"}
+{"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.342Z"}
+{"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T17:28:24.342Z"}
+{"level":"info","message":"🛑 Received SIGTERM. Shutting down gracefully...","service":"cron-scheduler","timestamp":"2025-07-12T17:30:27.167Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.190Z","timezone":"Africa/Casablanca"}
+{"level":"info","message":"🚀 Starting YouTube automation cron scheduler...","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.192Z"}
+{"0":"0 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.200Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 0 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.202Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.202Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.203Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.203Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.203Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.203Z"}
+{"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.204Z"}
+{"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.204Z"}
+{"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T17:30:32.204Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T17:33:55.409Z","timezone":"Africa/Casablanca"}
+{"level":"info","message":"🎬 Running single automation job...","service":"cron-scheduler","timestamp":"2025-07-12T17:33:55.410Z"}
+{"level":"info","message":"🔄 Attempt 1/3 - Starting automation","service":"cron-scheduler","timestamp":"2025-07-12T17:33:55.411Z"}
+{"level":"info","message":"🛑 Received SIGINT. Shutting down gracefully...","service":"cron-scheduler","timestamp":"2025-07-12T17:34:03.645Z"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.134Z","timezone":"Africa/Casablanca"}
+{"level":"info","message":"🚀 Starting YouTube automation cron scheduler...","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.135Z"}
+{"0":"0 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.144Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 0 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.146Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.146Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.146Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.147Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.147Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.147Z"}
+{"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.147Z"}
+{"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.148Z"}
+{"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T17:34:09.148Z"}
+{"duration":221405,"level":"info","message":"✅ Automation completed successfully on attempt 1","service":"cron-scheduler","timestamp":"2025-07-12T17:37:36.818Z","title":"قصة عربية جميلة - Story Time","videoId":"eNS269Xidak"}
+{"cronScheduleType":"sixPerDay","isRender":false,"level":"info","message":"🌍 Environment Info","nodeVersion":"v23.11.0","platform":"darwin","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.124Z","timezone":"Africa/Casablanca"}
+{"level":"info","message":"🚀 Starting YouTube automation cron scheduler...","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.125Z"}
+{"0":"44 18 * * *","1":"0 22 * * *","2":"0 2 * * *","3":"0 6 * * *","4":"0 10 * * *","5":"0 14 * * *","level":"info","message":"📅 Scheduling 6 cron jobs:","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.132Z"}
+{"level":"info","message":"✅ Scheduled job video-1 with cron: 44 18 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.134Z"}
+{"level":"info","message":"✅ Scheduled job video-2 with cron: 0 22 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.134Z"}
+{"level":"info","message":"✅ Scheduled job video-3 with cron: 0 2 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.134Z"}
+{"level":"info","message":"✅ Scheduled job video-4 with cron: 0 6 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.135Z"}
+{"level":"info","message":"✅ Scheduled job video-5 with cron: 0 10 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.135Z"}
+{"level":"info","message":"✅ Scheduled job video-6 with cron: 0 14 * * *","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.135Z"}
+{"level":"info","message":"✅ Cron scheduler started successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.136Z"}
+{"level":"info","message":"📝 Logs will be saved to logs/ directory","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.136Z"}
+{"level":"info","message":"🔄 Scheduler will run continuously. Press Ctrl+C to stop.","service":"cron-scheduler","timestamp":"2025-07-12T17:43:23.136Z"}
+{"jobName":"video-1","level":"info","message":"🎬 Starting scheduled job: video-1","schedule":"44 18 * * *","service":"cron-scheduler","startTime":"2025-07-12T17:44:00.199Z","timestamp":"2025-07-12T17:44:00.201Z"}
+{"level":"info","message":"🔄 Executing automation for job: video-1","service":"cron-scheduler","timestamp":"2025-07-12T17:44:00.202Z"}
+{"level":"info","message":"🔄 Attempt 1/3 - Starting automation","service":"cron-scheduler","timestamp":"2025-07-12T17:44:00.203Z"}
+{"duration":178359,"level":"info","message":"✅ Automation completed successfully on attempt 1","service":"cron-scheduler","timestamp":"2025-07-12T17:46:58.566Z","title":"سر الغابة المظلمة","videoId":"Yn6A5qoyqkM"}
+{"duration":178368,"jobName":"video-1","level":"info","message":"✅ Scheduled job video-1 completed successfully","service":"cron-scheduler","timestamp":"2025-07-12T17:46:58.567Z","title":"سر الغابة المظلمة","videoId":"Yn6A5qoyqkM","youtubeUrl":"https://youtube.com/watch?v=Yn6A5qoyqkM"}

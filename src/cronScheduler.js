@@ -16,6 +16,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Detect if running on Render
 const isRender = process.env.RENDER || process.env.NODE_ENV === "production";
 
+// Get local timezone or use UTC as fallback
+const getLocalTimezone = () => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+  } catch (error) {
+    return "UTC";
+  }
+};
+
+const LOCAL_TIMEZONE = getLocalTimezone();
+
 // Configure Winston logger for cron scheduler
 const logger = winston.createLogger({
   level: "info",
@@ -50,8 +61,8 @@ if (!fs.existsSync(logsDir)) {
 
 // Cron schedule configuration
 const CRON_SCHEDULES = [
-  // 6 videos per day - starting at 18:00 today, then every 4 hours
-  "0 18 * * *", // 6:00 PM (18:00) - TODAY
+  // 6 videos per day - starting at 18:00 local time, then every 4 hours
+  "44 18 * * *", // 6:00 PM (18:00) - TODAY
   "0 22 * * *", // 10:00 PM (22:00)
   "0 2 * * *", // 2:00 AM (next day)
   "0 6 * * *", // 6:00 AM
@@ -162,6 +173,7 @@ export function scheduleJobs() {
         });
 
         try {
+          logger.info(`🔄 Executing automation for job: ${jobName}`);
           const result = await runAutomationWithRetry();
           const duration = new Date() - jobStartTime;
 
@@ -177,13 +189,14 @@ export function scheduleJobs() {
           logger.error(`❌ Scheduled job ${jobName} failed`, {
             jobName,
             error: error.message,
+            stack: error.stack,
             duration,
           });
         }
       },
       {
         scheduled: true,
-        timezone: process.env.TZ || "UTC",
+        timezone: process.env.TZ || LOCAL_TIMEZONE,
       }
     );
 
@@ -200,7 +213,7 @@ export function displaySchedule() {
   schedules.forEach((schedule, index) => {
     try {
       const interval = cronParser.parseExpression(schedule, {
-        tz: process.env.TZ || "UTC",
+        tz: process.env.TZ || LOCAL_TIMEZONE,
       });
       const nextRun = interval.next().toDate();
       console.log(
@@ -214,7 +227,7 @@ export function displaySchedule() {
   });
 
   console.log(`\nTotal videos per day: ${schedules.length}`);
-  console.log(`Timezone: ${process.env.TZ || "UTC"}`);
+  console.log(`Timezone: ${process.env.TZ || LOCAL_TIMEZONE}`);
 }
 
 // Function to display statistics
@@ -262,7 +275,7 @@ async function main() {
   logger.info("🌍 Environment Info", {
     nodeEnv: process.env.NODE_ENV,
     isRender: isRender,
-    timezone: process.env.TZ || "UTC",
+    timezone: process.env.TZ || LOCAL_TIMEZONE,
     cronScheduleType: process.env.CRON_SCHEDULE_TYPE || "sixPerDay",
     platform: process.platform,
     nodeVersion: process.version,
@@ -282,7 +295,7 @@ async function main() {
       // Schedule daily cleanup at 3 AM
       cron.schedule("0 3 * * *", runCleanup, {
         scheduled: true,
-        timezone: process.env.TZ || "UTC",
+        timezone: process.env.TZ || LOCAL_TIMEZONE,
       });
 
       logger.info("✅ Cron scheduler started successfully");
@@ -371,7 +384,7 @@ async function main() {
       console.log(
         "  CRON_SCHEDULE_TYPE - Schedule type (sixPerDay, threePerDay, fourPerDay, eightPerDay)"
       );
-      console.log("  TZ                 - Timezone (default: UTC)");
+      console.log("  TZ                 - Timezone (default: local timezone)");
       console.log(
         "  NODE_ENV           - Environment (development/production)"
       );
