@@ -17,5 +17,16 @@
     "youtubeUrl": "https://youtube.com/watch?v=LgaPKUlaHiQ",
     "duration": 175355,
     "timestamp": "2025-07-08T16:39:43.930Z"
+  },
+  {
+    "sessionId": "session-1752087882694",
+    "videoId": "UUOpcFadCXY",
+    "title": "سر الغابة القديمة",
+    "originalTitle": "سر الغابة القديمة",
+    "videoPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/video/video-2025-07-09T19-05-15-690Z.mp4",
+    "thumbnailPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/thumbnails/thumbnail-2025-07-09T19-05-15-458Z.png",
+    "youtubeUrl": "https://youtube.com/watch?v=UUOpcFadCXY",
+    "duration": 148867,
+    "timestamp": "2025-07-09T19:07:11.563Z"
   }
 ]
