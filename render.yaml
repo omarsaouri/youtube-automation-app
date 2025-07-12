@@ -1,6 +1,23 @@
 services:
+  # Web service for the main application
+  - type: web
+    name: youtube-automation-web
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TZ
+        value: Europe/London
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health
+    autoDeploy: true
+
+  # Worker service for cron jobs
   - type: worker
-    name: youtube-automation
+    name: youtube-automation-cron
     env: node
     buildCommand: npm install
     startCommand: npm run cron start
@@ -8,4 +25,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: TZ
-        value: UTC 
+        value: Europe/London
+      - key: CRON_SCHEDULE_TYPE
+        value: sixPerDay
+    autoDeploy: true

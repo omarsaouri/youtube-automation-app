@@ -13,6 +13,9 @@ import fs from "fs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Detect if running on Render
+const isRender = process.env.RENDER || process.env.NODE_ENV === "production";
+
 // Configure Winston logger for cron scheduler
 const logger = winston.createLogger({
   level: "info",
@@ -39,15 +42,21 @@ const logger = winston.createLogger({
   ],
 });
 
+// Ensure logs directory exists
+const logsDir = path.join(__dirname, "../logs");
+if (!fs.existsSync(logsDir)) {
+  fs.mkdirSync(logsDir, { recursive: true });
+}
+
 // Cron schedule configuration
 const CRON_SCHEDULES = [
-  // 6 videos per day - every 4 hours starting at 6 AM
+  // 6 videos per day - starting at 18:00 today, then every 4 hours
+  "0 18 * * *", // 6:00 PM (18:00) - TODAY
+  "0 22 * * *", // 10:00 PM (22:00)
+  "0 2 * * *", // 2:00 AM (next day)
   "0 6 * * *", // 6:00 AM
   "0 10 * * *", // 10:00 AM
-  "0 14 * * *", // 2:00 PM
-  "0 18 * * *", // 6:00 PM
-  "0 22 * * *", // 10:00 PM
-  "0 2 * * *", // 2:00 AM (next day)
+  "0 14 * * *", // 2:00 PM (14:00)
 ];
 
 // Alternative schedules (uncomment to use different intervals)
@@ -249,9 +258,24 @@ async function runCleanup() {
 async function main() {
   const command = process.argv[2];
 
+  // Log environment information
+  logger.info("🌍 Environment Info", {
+    nodeEnv: process.env.NODE_ENV,
+    isRender: isRender,
+    timezone: process.env.TZ || "UTC",
+    cronScheduleType: process.env.CRON_SCHEDULE_TYPE || "sixPerDay",
+    platform: process.platform,
+    nodeVersion: process.version,
+  });
+
   switch (command) {
     case "start":
       logger.info("🚀 Starting YouTube automation cron scheduler...");
+
+      if (isRender) {
+        logger.info("🏗️ Running on Render - Production mode enabled");
+      }
+
       displaySchedule();
       scheduleJobs();
 
@@ -263,13 +287,49 @@ async function main() {
 
       logger.info("✅ Cron scheduler started successfully");
       logger.info("📝 Logs will be saved to logs/ directory");
-      logger.info("🔄 Scheduler will run continuously. Press Ctrl+C to stop.");
+
+      if (isRender) {
+        logger.info("☁️ Running on Render - Service will stay active");
+      } else {
+        logger.info(
+          "🔄 Scheduler will run continuously. Press Ctrl+C to stop."
+        );
+      }
+
+      // Graceful shutdown handling
+      const gracefulShutdown = (signal) => {
+        logger.info(`🛑 Received ${signal}. Shutting down gracefully...`);
+
+        // Stop all cron jobs
+        cron.getTasks().forEach((task) => {
+          task.stop();
+        });
+
+        logger.info("✅ All cron jobs stopped");
+        process.exit(0);
+      };
+
+      // Handle different shutdown signals
+      process.on("SIGINT", () => gracefulShutdown("SIGINT"));
+      process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));
+      process.on("SIGQUIT", () => gracefulShutdown("SIGQUIT"));
+
+      // Handle uncaught exceptions
+      process.on("uncaughtException", (error) => {
+        logger.error("💥 Uncaught Exception:", error);
+        gracefulShutdown("uncaughtException");
+      });
+
+      process.on("unhandledRejection", (reason, promise) => {
+        logger.error("💥 Unhandled Rejection at:", promise, "reason:", reason);
+        gracefulShutdown("unhandledRejection");
+      });
 
       // Keep the process running
-      process.on("SIGINT", () => {
-        logger.info("🛑 Received SIGINT. Shutting down gracefully...");
-        process.exit(0);
-      });
+      if (!isRender) {
+        // Only show this message in development
+        console.log("\n🔄 Cron scheduler is running. Press Ctrl+C to stop.");
+      }
 
       break;
 
@@ -312,6 +372,9 @@ async function main() {
         "  CRON_SCHEDULE_TYPE - Schedule type (sixPerDay, threePerDay, fourPerDay, eightPerDay)"
       );
       console.log("  TZ                 - Timezone (default: UTC)");
+      console.log(
+        "  NODE_ENV           - Environment (development/production)"
+      );
       break;
   }
 }
