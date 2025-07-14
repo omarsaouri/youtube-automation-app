@@ -100,7 +100,11 @@ async function refreshRecentUploads() {
     const data = await response.json();
 
     if (data.recentUploads && data.recentUploads.length > 0) {
-      const uploadsHtml = data.recentUploads
+      // Sort uploads by timestamp descending (most recent first)
+      const sortedUploads = data.recentUploads
+        .slice()
+        .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      const uploadsHtml = sortedUploads
         .map(
           (upload) => `
                   <div class="upload-item">

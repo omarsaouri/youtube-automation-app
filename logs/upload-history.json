@@ -1,24 +1,5 @@
 [
   {
-    "sessionId": "session-1751992191596",
-    "error": "The request metadata specifies an invalid or empty video title.",
-    "stack": "Error: The request metadata specifies an invalid or empty video title.\n    at Gaxios._request (/Users/omarsaouri/Coding/youtube-automation-app/node_modules/gaxios/build/src/gaxios.js:140:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async OAuth2Client.requestAsync (/Users/omarsaouri/Coding/youtube-automation-app/node_modules/google-auth-library/build/src/auth/oauth2client.js:382:18)\n    at async uploadToYouTube (file:///Users/omarsaouri/Coding/youtube-automation-app/src/youtubeUploader.js:59:31)\n    at async runAutomation (file:///Users/omarsaouri/Coding/youtube-automation-app/src/automationRunner.js:102:25)\n    at async runAutomationWithRetry (file:///Users/omarsaouri/Coding/youtube-automation-app/src/cronScheduler.js:93:28)\n    at async main (file:///Users/omarsaouri/Coding/youtube-automation-app/src/cronScheduler.js:257:32)",
-    "duration": 174355,
-    "timestamp": "2025-07-08T16:32:45.952Z",
-    "success": false
-  },
-  {
-    "sessionId": "session-1751992608574",
-    "videoId": "LgaPKUlaHiQ",
-    "title": "حلم التغييرالقصة: في قرية صغيرة تقع بين الجبال، كان هناك شاب يُدعى يوسف. كان يوسف معروفًا بذكائه ...",
-    "originalTitle": "\"حلم التغيير\"القصة: في قرية صغيرة تقع بين الجبال، كان هناك شاب يُدعى يوسف. كان يوسف معروفًا بذكائه وطموحه، لكنه كان يعيش في ظل عائلته الفقيرة. كان والده يعمل في الزراعة، وكانت والدته تقوم بأعمال منزلية بسيطة. على الرغم من الظروف الصعبة، كان يوسف يحلم بتغيير مصير عائلته والارتقاء بمستواهم المعيشي. كل يوم بعد المدرسة، كان يوسف يساعد والده في الحقل، لكن ذهنه كان مشغولاً بأفكار جديدة. كان يقرأ الكتب ويستمع إلى قصص النجاح التي كان يُخبره بها معلموه. قرر يوسف أنه لا بد من الخروج من هذه الدائرة المغلقة.\"يجب أن أكتشف شيئًا جديدًا، شيئًا يغير حياتنا\"، كان يتحدث إلى نفسه. ذات يوم، بينما كان يمشي في الغابة القريبة من قريته، لاحظ شيئًا غريبًا. كانت هناك شجرة قديمة، ولكن ما لفت انتباهه هو ما كان تحتها. كان هناك صندوق خشبي صغير، يبدو أنه مدفون منذ زمن بعيد. قرر يوسف أن يحفر حوله، وعندما أخرجه، اكتشف أنه مغلق بقفل صدئ. عاد إلى منزله وهو يفكر في كيفية فتح هذا الصندوق. كان لديه أصدقاء يحبون المغامرات، لذا قرر أن يجمعهم حول هذا اللغز. في اليوم التالي، اجتمع يوسف وأصدقاؤه في الغابة.\"أين نبحث عن المفتاح؟\"سأل أحدهم.\"ربما نجد شيئًا في القرية أو في المكتبة القديمة!\"أجاب يوسف بحماس. بدأوا بالبحث في كل مكان. سألوا كبار السن في القرية، ولكنهم لم يعرفوا شيئًا عن الصندوق. بعد ساعات من البحث، وجد أحد الأصدقاء مفتاحًا قديمًا في منزل جده. كان يبدو أنه يعود لعصور قديمة.\"لا بد أن هذا هو المفتاح!\"قال يوسف بحماس. توجهوا جميعًا إلى الغابة مرة أخرى. وعندما أدخل يوسف المفتاح في القفل، سمعوا صوتًا غريبًا. فتح الصندوق ببطء، وكأنما كان يُخفي سرًا عظيمًا. وعندما فتحوه، وجدوا مجموعة من الأوراق القديمة والمخطوطات. كانت تحتوي على وصفات سحرية ونصائح حول الزراعة والعلاج بالأعشاب.\"هذا مذهل!\"صرخ أحد الأصدقاء.\"يمكننا استخدام هذه الوصفات لتحسين محصولنا وزيادة دخلنا!\"بدأت الأفكار تدور في رأس يوسف، فقرر أن يستخدم هذه الوصفات لتحسين زراعة عائلته. في الأيام التالية، بدأ يوسف بتطبيق الوصفات في الحقل. ومع مرور الوقت، بدأت المحاصيل تنمو بشكل غير مسبوق. كانت الأرض تعطي ثمارًا وفيرة، وبدأت عائلة يوسف تشعر بتحسن كبير في وضعهم المالي. كان يوسف سعيدًا جدًا بما حققه، لكن كان لديه شعور غريب بأن هذا النجاح لم يكن طبيعيًا. ثم جاء يومٌ مفاجئ. بينما كان يوسف يعمل في الحقل، شعر بشيء غريب يحدث. نبتت شجرة ضخمة في وسط الحقل، وكانت تمتلك ثمارًا تتلألأ كالألماس! تجمع أهل القرية حوله، وبدأوا في التساؤل عن كيفية حدوث ذلك.\"هل هذا سحر؟\"سأل أحدهم.\"ما الذي حدث هنا؟\"شعر يوسف بالقلق، وبدأ في التحقيق. اكتشف أن وصفات الصندوق كانت تعود لأسلاف قديمين، وأن استخدامها كان له ثمن. كلما زادت المحاصيل، زادت قوة الشجرة، ولكن في نفس الوقت كانت تأخذ شيئًا من الأرض. لقد كانت تسحب الطاقة من الطبيعة، مما تسبب في جفاف بعض المناطق المجاورة. بدأ يوسف في التفكير:\"هل يجب أن أستمر في استخدام هذه الوصفات، أم أنني سأكون سببًا في تدمير البيئة من حولي؟\"كانت هذه المعركة الداخلية صعبة، ولكنه قرر أن يفعل الشيء الصحيح. اجتمع مع أصدقائه وأهل القرية وأخبرهم عن ما اكتشفه.\"يجب أن نختار بين النجاح الشخصي ورفاهية قريتنا. لا يمكننا التضحية بالطبيعة من أجل المال!\"قال يوسف بصوت قوي. تأثر الجميع بكلماته، وبدأوا في التفكير بجدية. في النهاية، قرروا أن يعودوا إلى طرق الزراعة التقليدية. استخدموا ما تعلموه من وصفات الصندوق بشكل معتدل، وبدأوا في إعادة زراعة الأرض بشكل مستدام. كانت النتائج مذهلة، وبدأت القرية تستعيد توازنها. تعلم يوسف درسًا قيمًا من هذه التجربة. كان النجاح ليس فقط في المال، بل في الحفاظ على البيئة والحياة من حوله. وعندما نظر إلى السماء، عرف أنه قد اتخذ القرار الصحيح. وهكذا، عادت القرية إلى سابق عهدها من الازدهار، لكن هذه المرة، كانت الحياة مرتبطة بالطبيعة بشكل أعمق. أدرك الجميع أن التغيير الحقيقي يبدأ من الداخل، وأن كل نجاح يأتي بتوازن مع ما حوله.",
-    "videoPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/video/video-2025-07-08T16-37-27-934Z.mp4",
-    "thumbnailPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/thumbnails/thumbnail-2025-07-08T16-37-26-597Z.png",
-    "youtubeUrl": "https://youtube.com/watch?v=LgaPKUlaHiQ",
-    "duration": 175355,
-    "timestamp": "2025-07-08T16:39:43.930Z"
-  },
-  {
     "sessionId": "session-1752087882694",
     "videoId": "UUOpcFadCXY",
     "title": "سر الغابة القديمة",
@@ -72,5 +53,27 @@
     "youtubeUrl": "https://youtube.com/watch?v=Yn6A5qoyqkM",
     "duration": 178359,
     "timestamp": "2025-07-12T17:46:58.565Z"
+  },
+  {
+    "sessionId": "session-1752493115840",
+    "videoId": "WhmKuOEHTME",
+    "title": "سر الغابة المظلمة",
+    "originalTitle": "سر الغابة المظلمة",
+    "videoPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/video/video-2025-07-14T11-39-17-958Z.mp4",
+    "thumbnailPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/thumbnails/thumbnail-2025-07-14T11-39-17-709Z.png",
+    "youtubeUrl": "https://youtube.com/watch?v=WhmKuOEHTME",
+    "duration": 157245,
+    "timestamp": "2025-07-14T11:41:13.087Z"
+  },
+  {
+    "sessionId": "session-1752494617242",
+    "videoId": "3CHisFc6ZJU",
+    "title": "سر القلادة المفقودة",
+    "originalTitle": "سر القلادة المفقودة",
+    "videoPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/video/video-2025-07-14T12-04-12-186Z.mp4",
+    "thumbnailPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/thumbnails/thumbnail-2025-07-14T12-04-11-967Z.png",
+    "youtubeUrl": "https://youtube.com/watch?v=3CHisFc6ZJU",
+    "duration": 146503,
+    "timestamp": "2025-07-14T12:06:03.747Z"
   }
 ]
