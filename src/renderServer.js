@@ -36,44 +36,6 @@ let isProduction = process.env.NODE_ENV === "production";
 let lastActivity = Date.now();
 let cronJobs = [];
 
-// Function to keep service alive (for free tier)
-function setupKeepAlive() {
-  if (!isProduction) return;
-
-  // Ping the service every 10 minutes to keep it alive
-  setInterval(async () => {
-    try {
-      const response = await fetch(
-        `https://${process.env.RENDER_EXTERNAL_HOSTNAME || "localhost"}/health`
-      );
-      if (response.ok) {
-        logger.info("✅ Keep-alive ping successful");
-        lastActivity = Date.now();
-      }
-    } catch (error) {
-      logger.warn("⚠️ Keep-alive ping failed:", error.message);
-    }
-  }, 10 * 60 * 1000); // 10 minutes
-
-  // Also ping external services to keep the service alive
-  const pingUrls = [
-    "https://uptimerobot.com",
-    "https://cron-job.org",
-    "https://www.google.com",
-  ];
-
-  setInterval(async () => {
-    for (const url of pingUrls) {
-      try {
-        await fetch(url);
-        logger.info(`✅ External ping to ${url} successful`);
-      } catch (error) {
-        logger.warn(`⚠️ External ping to ${url} failed:`, error.message);
-      }
-    }
-  }, 15 * 60 * 1000); // 15 minutes
-}
-
 // Function to check if we should run cron jobs
 function shouldRunCronJobs() {
   if (!isProduction) return true;
@@ -136,6 +98,12 @@ setupFreeTierCron();
 
 // Health check endpoint
 app.get("/health", (req, res) => {
+  // Log every time /health is hit
+  logger.info("/health endpoint was pinged", {
+    ip: req.ip,
+    userAgent: req.get("User-Agent"),
+    timestamp: new Date().toISOString(),
+  });
   // Update last activity timestamp
   lastActivity = Date.now();
 
