@@ -1,7 +1,6 @@
 node_modules
 .env
 output/
-thumbnailsBackgrounds/
 output/stories/
 output/audio/
 output/videos/
