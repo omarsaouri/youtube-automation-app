@@ -15,6 +15,37 @@ if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
+async function compressBackgroundImages(targetSizeKB = 500) {
+  const files = fs
+    .readdirSync(BACKGROUNDS_DIR)
+    .filter((f) => f.endsWith(".png"));
+  for (const file of files) {
+    const filePath = path.join(BACKGROUNDS_DIR, file);
+    const stats = fs.statSync(filePath);
+    if (stats.size / 1024 > targetSizeKB) {
+      // Compress image
+      const compressedPath = filePath.replace(".png", "-compressed.png");
+      await sharp(filePath)
+        .resize(1280, 720, { fit: "inside", withoutEnlargement: true })
+        .png({ quality: 80, compressionLevel: 9 })
+        .toFile(compressedPath);
+      const compressedStats = fs.statSync(compressedPath);
+      if (compressedStats.size < stats.size) {
+        fs.renameSync(compressedPath, filePath);
+        console.log(
+          `Compressed ${file} to ${(compressedStats.size / 1024).toFixed(1)}KB`
+        );
+      } else {
+        fs.unlinkSync(compressedPath);
+      }
+    }
+  }
+}
+
+if (process.env.NODE_ENV !== "production") {
+  compressBackgroundImages().catch(console.error);
+}
+
 export async function generateThumbnail(title, outputDir = OUTPUT_DIR) {
   try {
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
@@ -37,7 +68,9 @@ export async function generateThumbnail(title, outputDir = OUTPUT_DIR) {
     const backgroundPath = path.join(BACKGROUNDS_DIR, randomBackground);
 
     // Create the image with the selected background and blur it
-    let image = sharp(backgroundPath).blur(10);
+    let image = sharp(backgroundPath)
+      .resize(1280, 720, { fit: "cover" }) // always 1280x720, cropping if needed
+      .blur(10);
 
     // Prepare SVG text with gradient fill, strong black border, and shadow
     // Split title into lines if too long (max 20 chars per line for example)

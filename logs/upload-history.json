@@ -86,5 +86,40 @@
     "youtubeUrl": "https://youtube.com/watch?v=yJ5ALNWextU",
     "duration": 158306,
     "timestamp": "2025-07-15T11:06:51.734Z"
+  },
+  {
+    "sessionId": "session-1752596687190",
+    "error": "Image to composite must have same dimensions or smaller",
+    "stack": "Error: Image to composite must have same dimensions or smaller",
+    "duration": 38643,
+    "timestamp": "2025-07-15T16:25:25.833Z",
+    "success": false
+  },
+  {
+    "sessionId": "session-1752596726838",
+    "error": "Image to composite must have same dimensions or smaller",
+    "stack": "Error: Image to composite must have same dimensions or smaller",
+    "duration": 79678,
+    "timestamp": "2025-07-15T16:26:46.517Z",
+    "success": false
+  },
+  {
+    "sessionId": "session-1752596808520",
+    "error": "Image to composite must have same dimensions or smaller",
+    "stack": "Error: Image to composite must have same dimensions or smaller",
+    "duration": 49823,
+    "timestamp": "2025-07-15T16:27:38.344Z",
+    "success": false
+  },
+  {
+    "sessionId": "session-1752597009813",
+    "videoId": "b9LvZJLYMlI",
+    "title": "قصة عربية جميلة - Story Time",
+    "originalTitle": "قصة عربية جميلة - Story Time",
+    "videoPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/video/video-2025-07-15T16-30-55-676Z.mp4",
+    "thumbnailPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/thumbnails/thumbnail-2025-07-15T16-30-55-461Z.png",
+    "youtubeUrl": "https://youtube.com/watch?v=b9LvZJLYMlI",
+    "duration": 165113,
+    "timestamp": "2025-07-15T16:32:54.926Z"
   }
 ]
