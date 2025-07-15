@@ -93,7 +93,6 @@ function setupFreeTierCron() {
 
 // Start the cron scheduler
 logger.info("🚀 Starting YouTube automation system...");
-setupKeepAlive();
 setupFreeTierCron();
 
 // Health check endpoint
