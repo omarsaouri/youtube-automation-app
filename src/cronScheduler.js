@@ -62,7 +62,7 @@ if (!fs.existsSync(logsDir)) {
 // Cron schedule configuration
 const CRON_SCHEDULES = [
   // 6 videos per day - starting at 18:00 local time, then every 4 hours
-  "44 18 * * *", // 6:00 PM (18:00) - TODAY
+  "0 18 * * *", // 6:00 PM (18:00) - TODAY
   "0 22 * * *", // 10:00 PM (22:00)
   "0 2 * * *", // 2:00 AM (next day)
   "0 6 * * *", // 6:00 AM

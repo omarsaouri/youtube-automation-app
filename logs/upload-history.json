@@ -75,5 +75,16 @@
     "youtubeUrl": "https://youtube.com/watch?v=3CHisFc6ZJU",
     "duration": 146503,
     "timestamp": "2025-07-14T12:06:03.747Z"
+  },
+  {
+    "sessionId": "session-1752577453427",
+    "videoId": "yJ5ALNWextU",
+    "title": "سر الجبل العتيق",
+    "originalTitle": "سر الجبل العتيق",
+    "videoPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/video/video-2025-07-15T11-04-50-157Z.mp4",
+    "thumbnailPath": "/Users/omarsaouri/Coding/youtube-automation-app/output/thumbnails/thumbnail-2025-07-15T11-04-49-970Z.png",
+    "youtubeUrl": "https://youtube.com/watch?v=yJ5ALNWextU",
+    "duration": 158306,
+    "timestamp": "2025-07-15T11:06:51.734Z"
   }
 ]
